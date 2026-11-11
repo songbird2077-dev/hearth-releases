@@ -12,6 +12,11 @@
 # If any check fails, nothing is installed. Downloads made this way skip the "Windows protected
 # your PC" step, because the checks above have already confirmed the file.
 #
+# What it trusts: GitHub. This script and latest.json both come from Hearth's GitHub repos, so
+# the checksum proves the download is the file the release lists, not who made the release.
+# (Windows PowerShell 5.1 can't check latest.json.sig, which uses Ed25519.) Once installed,
+# Hearth checks that signature on every update.
+#
 # Works in Windows PowerShell 5.1 (built into Windows 10 and 11) and PowerShell 7.
 
 & {
@@ -48,7 +53,8 @@
 
     $key = "win-$arch"
     $asset = $null
-    if ($feed.assets) { $asset = $feed.assets.$key }
+    # "installers" lists the setup.exe files ("assets" is the update zips the app itself reads).
+    if ($feed.installers) { $asset = $feed.installers.$key }
     if (-not $asset) { Stop-Install "there is no Windows ($arch) version of Hearth $($feed.version) yet." }
     $url = [string]$asset.url
     $sha = ([string]$asset.sha256).ToLowerInvariant()
