@@ -244,6 +244,14 @@ Settings, **Schedules** sends a message for you at a set time, in a new or exist
 ### Usage
 The bottom bar shows how much of your plan you have used. Settings, **Usage and cost** shows what each folder has cost and has a **Usage saver** with three levels: Balanced, Strict and Off. Settings, Chats, **Summarize when a chat reaches** sets when long chats sum themselves up.
 
+### Codex helper
+Settings, **Codex helper** lets Claude hand work to OpenAI's Codex, under your own Codex sign-in. It is off until you turn it on, and Hearth asks you to confirm, because the task and the files Codex reads go to OpenAI. Modes: **Off**, **Only when I ask**, **Claude decides**, and **Save Claude usage**.
+
+Save Claude usage watches the higher of your Claude 5-hour and weekly usage. At the level you set (80% by default), Claude starts handing self-contained work, such as code, scripts, tests and reviews, to Codex, and checks what Codex changed. At 95% (or 10 points above your level, if that is higher) Claude only plans, writes briefs, checks and talks to you, and Codex does the work. Hearth shows a short notice when this starts and when it ends. If Codex is close to its own limit, Claude does the work itself. Whether a Codex run asks you first still follows the chat's permission level.
+
+### Ask Claude about Hearth
+Claude knows it runs in Hearth. Ask "What can Hearth do for me?" or "Where do I change how much you do on your own?" and Claude tells you which button to press and where it is, with its shortcut. Claude cannot press Hearth's buttons or change Hearth's settings for you, so it points the way. To switch this off, open Settings, Chats, **Tell Claude about Hearth**. Off means Claude acts as plain Claude Code. The change applies to chats you start or restart after it.
+
 ## Updates
 
 Hearth updates itself. It checks shortly after it opens and then once a day. When a new version is out you get a notice. Click it, or choose **Check for Updates** in Hearth's menu, to open **Settings, Account and updates**. Nothing installs until you click **Update** there.
@@ -285,4 +293,4 @@ Hearth updates itself. It checks shortly after it opens and then once a day. Whe
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.4.4 -->
+<!-- checked for: 0.4.5 -->
