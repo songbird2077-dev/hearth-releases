@@ -205,7 +205,7 @@ The **Claude version** menu has **Default** on top (picked for you), then the la
 The plug button opens **Apps and add-ons**. Apps are services such as mail, calendar and file storage that you connect on claude.ai. Use **Add an app on claude.ai**, connect it there, and it shows up in new chats. Hearth reconnects tools that drop, for example after your computer wakes. **Refresh connectors** restarts your open chats where they left off, so they pick up apps you added or signed in to again. A dot on the button means a tool failed or needs sign-in. **Browse add-ons** lists add-ons (plugins) you can install. Only install add-ons you trust.
 
 ### Background work and helpers
-Commands and helpers that Claude runs in the background show in the **Background work** panel (the clock button), each with its own Stop. **Move to background** lets a chat carry on while Claude waits on a long task. Switch a chat from **Solo** to **Team** and Claude hands routine work to helpers on cheaper models, then checks their work. **Swarm** runs many helpers at once and asks before starting more than five. The **Helpers** panel shows who is doing what.
+Commands and helpers that Claude runs in the background show in the **Background work** panel (the hourglass button), each with its own Stop. **Move to background** lets a chat carry on while Claude waits on a long task. Switch a chat from **Solo** to **Team** and Claude hands routine work to helpers on cheaper models, then checks their work. **Swarm** runs many helpers at once and asks before starting more than five. The **Helpers** panel shows who is doing what.
 
 ### Linked chats
 A chat can start other chats that work on their own. Claude does this when work splits into parts, and Hearth asks you first. Or you can do it with **Split off** in a reply's menu. A linked chat never gets more access than the chat that started it. Its replies show in the first chat as a "Report from" card. Stopping a chat stops the chats it started.
@@ -226,6 +226,9 @@ In **New chat with options**, set Kind of chat to **Research**. Claude searches 
 
 ### Notes
 Connect a notes folder and the **Notes** panel (Cmd+Shift+B or Ctrl+Shift+B) opens beside the chat.
+
+### Text size
+Settings, **Appearance**, **Text size** makes everything in Hearth bigger or smaller together: Smaller, Default, Larger, Very large and Extra large. **Automatic** (the usual choice) picks for your screen: Default on laptops, a little larger on desk screens such as 27 inch 1440p and ultrawide monitors, and larger again on 4K screens shown at full resolution. **Cmd+Plus** and **Cmd+Minus** (Ctrl on Windows) change it too, and **Cmd+0** goes back to Automatic.
 
 ### Looks and mods
 - **Looks** (skins): Hearth comes with a plain look and four starter looks. Open the palette button at the bottom of the sidebar to change colors, fonts and spacing live, or describe what you want and Claude designs it. Nothing is saved until you click Save. If a look breaks something, use **Help, Relaunch with the plain look**.
@@ -294,4 +297,4 @@ Hearth updates itself. It checks shortly after it opens and then once a day. Whe
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.4.6 -->
+<!-- checked for: 0.4.7 -->
