@@ -148,7 +148,7 @@ Your messages and Claude's replies. Under each message are small icons. Point at
 |---|---|
 | Copy | Copies the message. |
 | Read aloud | Your computer's voice reads a reply. Code is skipped. |
-| Rewind to here | Takes the chat back to this point. You choose whether files Claude changed after it are undone too. |
+| Rewind to here | Takes the chat back to this point. You choose whether files Claude changed after it are undone too. The newest reply at the bottom has **Rewind this reply**, which goes back to before your last message. |
 | Edit and resend | On your last message: opens a copy of the chat with your words ready to change. The original stays. |
 | More | **Fork from here** starts a new chat with everything up to this point. **Split off** starts a linked chat. |
 
@@ -160,6 +160,7 @@ Very long chats show the newest messages first and load older ones as you scroll
 - **Voice**: click the microphone (Cmd+Shift+Space or Ctrl+Shift+Space). Your words appear in the box and nothing is sent until you press Enter. The first time, your computer asks to allow the microphone.
 - **Capture**: the dashed square takes a picture of part of your screen into the message.
 - **Talk**: hands-free. Say something, hear the answer, keep going.
+- **Spelling**: right-click an underlined word to pick the right spelling, or **Add to dictionary**. The same menu has Cut, Copy and Paste.
 - Type `/` to see commands. **Cmd+/** (Ctrl+/) opens a searchable list of shortcuts and commands.
 
 ### The header (top of a chat)
@@ -293,4 +294,4 @@ Hearth updates itself. It checks shortly after it opens and then once a day. Whe
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.4.5 -->
+<!-- checked for: 0.4.6 -->
