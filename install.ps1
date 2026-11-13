@@ -8,7 +8,8 @@
 #      and Snapdragon laptops), downloads it and checks its size and SHA-256 against that list.
 #   3. Runs the installer quietly. Hearth installs for you only, in
 #      %LOCALAPPDATA%\Programs\Hearth, with Start menu and desktop shortcuts. No admin needed.
-#   4. Opens Hearth, and says whether Git for Windows (which Claude Code needs) is installed.
+#   4. Opens Hearth (through Explorer, so it stays open when this window closes), and says
+#      whether Git for Windows (which Claude Code needs) is installed.
 # If any check fails, nothing is installed. Downloads made this way skip the "Windows protected
 # your PC" step, because the checks above have already confirmed the file.
 #
@@ -90,6 +91,18 @@
     $app = Join-Path $env:LOCALAPPDATA 'Programs\Hearth\Hearth.exe'
     if (-not (Test-Path -LiteralPath $app)) { Stop-Install "the installer finished, but Hearth isn't in $(Split-Path $app)." }
 
+    # The installer makes the Start menu shortcut. If it is missing anyway, make it here, so
+    # Hearth can always be found by searching the Start menu.
+    $lnk = Join-Path $env:APPDATA 'Microsoft\Windows\Start Menu\Programs\Hearth.lnk'
+    if (-not (Test-Path -LiteralPath $lnk)) {
+      try {
+        $shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($lnk)
+        $shortcut.TargetPath = $app
+        $shortcut.WorkingDirectory = Split-Path $app
+        $shortcut.Save()
+      } catch { }
+    }
+
     Write-Host ''
     Write-Host "Hearth $($feed.version) is installed." -ForegroundColor Green
     $git = (Get-Command git.exe -ErrorAction SilentlyContinue) -or (Test-Path (Join-Path $env:ProgramFiles 'Git\bin\bash.exe'))
@@ -98,9 +111,14 @@
       Write-Host 'Hearth shows you how when it opens.'
     }
     if (-not $env:HEARTH_INSTALL_NO_OPEN) {
-      Start-Process -FilePath $app
+      # Opened through Explorer, not from here: a program started from this window is tied to
+      # it and closes when the window is closed. Explorer starts it the way a shortcut does.
+      Start-Process -FilePath (Join-Path $env:WINDIR 'explorer.exe') -ArgumentList ('"' + $app + '"')
       Write-Host 'Opening Hearth...'
     }
+    if (Test-Path -LiteralPath $lnk) { Write-Host 'To open Hearth later: press the Windows key, type Hearth, press Enter.' }
+    else { Write-Host "To open Hearth later: $app" }
+    Write-Host 'You can close this window.'
   } catch {
     if ($_.Exception.Message -ne 'Hearth install stopped.') {
       Write-Host ''
