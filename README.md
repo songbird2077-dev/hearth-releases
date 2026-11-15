@@ -134,6 +134,7 @@ Tip: start with **Ask me first**. Claude then asks before it changes anything.
 - **Archive** chats you are done with. Settings, Privacy and lock can archive old ones for you.
 - Double-click a chat (or press F2) to rename it. New chats can name and file themselves (Settings, Chats).
 - The **Organize** button above the list makes groups, renames or moves the open chat, and can suggest groups by topic. It shows them first and has Undo.
+- **Rename chats** (Organize button, a group's right-click menu, or the command palette) gives many chats names that fit the whole chat. Pick which chats, check Claude's suggestions, edit any of them, then apply. It uses a small amount of your plan (one short request per few chats), skips names you typed yourself unless you include them, and has Undo.
 - The **View** button changes how the list is sorted and grouped. It never moves anything.
 - A small dot shows what each chat is doing: working, waiting for you, open, stopped, or stopped after an error.
 - **Linked chats** show under the chat that started them, in the same group, with a thin thread line. Pinning or moving one moves the whole family.
@@ -147,7 +148,7 @@ Your messages and Claude's replies. Under each message are small icons. Point at
 | Icon | What it does |
 |---|---|
 | Copy | Copies the message. |
-| Read aloud | Your computer's voice reads a reply. Code is skipped. |
+| Read aloud | Your computer's voice reads a reply. Code is skipped. Settings, Voice sets the voice and the reading speed (slide it, or type an exact speed like 1.25). |
 | Rewind to here | Takes the chat back to this point. You choose whether files Claude changed after it are undone too. The newest reply at the bottom has **Rewind this reply**, which goes back to before your last message. |
 | Edit and resend | On your last message: opens a copy of the chat with your words ready to change. The original stays. |
 | More | **Fork from here** starts a new chat with everything up to this point. **Split off** starts a linked chat. |
@@ -243,13 +244,14 @@ Settings, **Privacy and lock** can lock Hearth with Touch ID (Mac) or Windows He
 - Settings, **Backup and troubleshooting**, **Back up Hearth** makes one `.hearthbackup` file with your settings, groups, looks, mods and pages. Use **Restore from backup** on a new computer. Chats and passwords are not in it.
 
 ### Schedules
-Settings, **Schedules** sends a message for you at a set time, in a new or existing chat. **Start from a template** (for example Morning briefing or Weekly summary) fills the form. Nothing runs until you save. Schedules run while Hearth is open, and never skip permissions: if Claude needs your OK, the chat waits and Hearth notifies you.
+Settings, **Schedules** sends a message for you at a set time, in a new or existing chat. **Start from a template** (for example Morning briefing or Weekly summary) fills the form. Nothing runs until you save. Schedules run only while Hearth is open. Closing the window quits Hearth unless you choose **Keep Hearth running** in Settings, Notifications and shortcuts, under **When you close the window** (see [Closing Hearth](#closing-hearth)). Schedules never skip permissions: if Claude needs your OK, the chat waits and Hearth notifies you.
 
 ### Usage
 The bottom bar shows how much of your plan you have used. Settings, **Usage and cost** shows what each folder has cost and has a **Usage saver** with three levels: Balanced, Strict and Off. Settings, Chats, **Summarize when a chat reaches** sets when long chats sum themselves up.
 
 ### Codex helper
 Settings, **Codex helper** lets Claude hand work to OpenAI's Codex, under your own Codex sign-in. It is off until you turn it on, and Hearth asks you to confirm, because the task and the files Codex reads go to OpenAI. Modes: **Off**, **Only when I ask**, **Claude decides**, and **Save Claude usage**.
+It shows which account Codex is signed in to (the email and plan Codex reports, only in Hearth's window). **Switch account** signs Codex out and opens the sign-in page so you can pick another account; it won't run while a Codex run is going. **Use an API key instead** shows how.
 
 Save Claude usage watches the higher of your Claude 5-hour and weekly usage. At the level you set (80% by default), Claude starts handing self-contained work, such as code, scripts, tests and reviews, to Codex, and checks what Codex changed. At 95% (or 10 points above your level, if that is higher) Claude only plans, writes briefs, checks and talks to you, and Codex does the work. Hearth shows a short notice when this starts and when it ends. If Codex is close to its own limit, Claude does the work itself. Whether a Codex run asks you first still follows the chat's permission level.
 
@@ -266,6 +268,13 @@ Hearth updates itself. It checks shortly after it opens and then once a day. Whe
 - If an update does not go in, the Updates page opens at the next start and says why.
 - **Windows:** if you have version 0.4.2 or older, Hearth cannot install updates by itself. Download the latest setup file from the releases page and run it once. Your chats and settings stay.
 - **Mac:** keep Hearth in the Applications folder so it can update itself.
+
+The **Claude engine** (Claude Code) has its own part of that page. It never updates itself while Hearth runs it, so Hearth looks for a new version shortly after it opens and then once a day, and tells you once per version. Hearth only asks downloads.claude.ai for a version number; nothing about you is sent.
+
+- The page shows your version, the newest one, when Hearth last looked, and what went wrong if it could not look.
+- Click **Update the Claude engine** to update. Chats that were open can restart on the new version; a chat that is working restarts after its reply.
+- Turn on **Update the Claude engine automatically** to let Hearth update it by itself when no chat is working. It never stops a reply, and Settings shows how it went.
+- **Check for new Claude engine versions** is on unless you turn it off. Off, Hearth only looks when you click **Check now**.
 
 ## Your data
 
@@ -290,11 +299,17 @@ Hearth updates itself. It checks shortly after it opens and then once a day. Whe
 | Hearth acts oddly | Choose **Restart Hearth** in Hearth's menu. If the look looks broken, choose **Help, Relaunch with the plain look**. |
 | You need to describe a problem | Choose **Help, Save Diagnostics**. It makes a small zip of version numbers and settings with secrets, emails and your user folder name removed. It has no chats. Look it over before you share it. |
 
+## Closing Hearth
+
+Closing the window (the red button on a Mac, the X on Windows, or Cmd+W or Ctrl+W) quits Hearth completely, with nothing left in the Dock, the tray or the background. If Claude is still working, Hearth asks first: **Quit**, **Keep running in the background** (just this once), or **Cancel**.
+
+If you use schedules or leave work running, go to **Settings, Notifications and shortcuts** and under **When you close the window** choose **Keep Hearth running**. Closing the window then leaves Hearth running (on a Mac in the Dock and menu bar, on Windows in the tray), so schedules and background work carry on. To quit for real, use **Quit Hearth** in the menu (Cmd+Q on a Mac, Ctrl+Q on Windows) or right-click the tray icon and choose **Quit**. If you have schedules, Hearth tells you once after updating that closing now quits, and offers to switch.
+
 ## Uninstall
 
-- **Windows:** quit Hearth from the flame in the system tray (bottom right of the taskbar), then open Windows Settings, Apps, Installed apps, find Hearth and choose **Uninstall**.
+- **Windows:** quit Hearth (with the default, closing the window is enough; if you chose Keep Hearth running, use the flame in the system tray at the bottom right of the taskbar), then open Windows Settings, Apps, Installed apps, find Hearth and choose **Uninstall**.
 - **Mac:** quit Hearth and move it from Applications to the Trash.
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.4.7 -->
+<!-- checked for: 0.4.8 -->
