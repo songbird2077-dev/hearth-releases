@@ -214,7 +214,7 @@ Turn this on when you want Claude to get on with the work without putting your f
 The **Claude version** menu has **Default** on top (picked for you), then the latest versions, and **More models** for older ones. **Thinking** sets how long Claude thinks: Quick, Balanced, Thorough, Extra thorough or Maximum. More thinking takes longer and uses more of your plan. **Big project mode** is for one large job: Claude plans, then splits the work among helpers. It uses much more of your plan.
 
 ### Apps and add-ons
-The plug button opens **Apps and add-ons**. Apps are services such as mail, calendar and file storage that you connect on claude.ai. Use **Add an app on claude.ai**, connect it there, and it shows up in new chats. Hearth reconnects tools that drop, for example after your computer wakes. **Refresh connectors** restarts your open chats where they left off, so they pick up apps you added or signed in to again. A dot on the button means a tool failed or needs sign-in. **Browse add-ons** lists add-ons (plugins) you can install. Only install add-ons you trust.
+The plug button opens **Apps and add-ons**. Apps are services such as mail, calendar and file storage that you connect on claude.ai. Use **Add an app on claude.ai**, connect it there, and it shows up in new chats. Hearth reconnects tools that drop, for example after your computer wakes. **Refresh connectors** restarts your open chats where they left off, so they pick up apps you added or signed in to again. When an app or tool needs you to sign in again, its row shows **Sign in**. Choose it, finish in your browser, then come back to Hearth. Your open chats pick it up on their own. Hearth also offers **Sign in** in a message when Claude tries to use an app and its sign-in has run out. **Compared with the Claude app** at the top of the panel checks that Hearth has the same apps as the Claude app. If it finds a difference (another account, an app that did not come through, or a sign-in that ran out) it says so in plain words and gives you the button to fix it. Hearth also shows one message about this when you first open a chat after starting it. A dot on the button means a tool failed or needs sign-in. **Browse add-ons** lists add-ons (plugins) you can install. Only install add-ons you trust.
 
 ### Background work and helpers
 Commands and helpers that Claude runs in the background show in the **Background work** panel (the hourglass button), each with its own Stop. **Move to background** lets a chat carry on while Claude waits on a long task. Switch a chat from **Solo** to **Team** and Claude hands routine work to helpers on cheaper models, then checks their work. **Swarm** runs many helpers at once and asks before starting more than five. The **Helpers** panel shows who is doing what.
@@ -303,7 +303,8 @@ The **Claude engine** (Claude Code) has its own part of that page. It never upda
 | **Windows protected your PC** appears | Click **More info**, then **Run anyway**. Or use the one-line PowerShell install, which skips it. |
 | macOS says it cannot verify the developer | Click **Done**, then System Settings, Privacy & Security, **Open Anyway**. Do this once. |
 | Hearth says Git for Windows is missing | Install it from git-scm.com/downloads/win with the suggested settings, then click **Check again**. |
-| A connector shows a dot or says it needs sign-in | Sign in to it again on claude.ai, then press **Refresh connectors** in the Apps and add-ons panel. |
+| A connector shows a dot or says it needs sign-in | Open the Apps and add-ons panel and choose **Sign in** on its row. Finish in your browser, then come back to Hearth. If the page opens in the wrong browser or profile, use **Copy sign-in link** and paste it where you are signed in to Claude. |
+| An app works in the Claude app but not in Hearth | Open the Apps and add-ons panel and read **Compared with the Claude app**. It says what differs, for example another account, and gives you the button to fix it. |
 | An update did not install | Open Settings, Account and updates to read why. On Windows 0.4.2 or older, run the newest setup file once. On a Mac, check that Hearth is in Applications. |
 | Chat still asks on **Do it all** | That level still asks about risky things, such as files outside the chat's folder. The approval card says why. Allow it once, or choose always allow for that exact step. |
 | Claude is not signed in | Click **Sign in with Claude** again. **Open the browser again** replaces a stuck sign-in. |
@@ -326,4 +327,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.5.0 -->
+<!-- checked for: 0.5.1 -->
