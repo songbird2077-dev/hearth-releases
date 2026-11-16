@@ -169,6 +169,7 @@ Very long chats show the newest messages first and load older ones as you scroll
 - The chat's name. Click it to rename, move to a group or pin.
 - The Claude version and **Thinking** button.
 - **How much Claude does on its own** (shows "Ask me first" or your current level).
+- A small shield when **Full access, safely** is on. Hover it to see what it means for this chat.
 - **Files Claude changed**, **Sources** (Research chats), **Background work**, **Apps and add-ons**, **Preview**, and the linked chats button.
 - A phone button that turns on **Continue on your phone**.
 - A download button that saves the chat as Markdown, HTML or PDF. Hearth offers to hide passwords and keys in the file.
@@ -196,6 +197,16 @@ This is the button at the top of every chat. It has five levels:
 | **Never ask (risky)** | Claude never asks and can do anything on this computer. Only for experts. It always asks you to confirm first. |
 
 **What is an approval card?** When Claude wants to do something that needs your OK, a card appears in the chat. It says in plain words what Claude wants to do. You can **allow it once**, **always allow it** in this folder, or **deny it** (which just tells Claude no). "Always allow" covers one exact file or one exact command, never a whole folder. On **Do it all**, the card also says why Claude is asking.
+
+### Full access, safely
+
+Turn this on when you want Claude to get on with the work without putting your files at risk. It sits at the bottom of the level menu (the button at the top of a chat), in the **New chat** window, and in Settings, **Permissions**, where you can turn it on for every new chat. Turning it on also moves the chat to **Do it all**, so Claude doesn't stop for everyday steps.
+
+- **On a Mac**: commands Claude runs go in Claude Code's safety box. They can only change files in the chat's folder and in folders you added to the chat (never your whole disk or home folder). They can read the rest of your Mac; Hearth blocks common secret files, like keys, saved logins, shell history and browser data. Your shell startup files, sign-in items and Git settings can't be changed. Git and most installs still work; an install that writes to a shared download folder may ask. Other websites follow your level: on **Do it all** the safety check looks at them first. The shield in the header says "Commands can only change files in this chat's folders".
+- **If the safety box can't start**, the chat tells you, starts again without it, and asks you before every command. **Never ask** is off for that chat until the box works again (it runs on **Do it all**). It never runs commands unprotected without telling you.
+- **On Windows** there is no safety box for commands. Simple reading commands (listing a folder, showing a file, searching one file) with their everyday options and Claude's own file edits go ahead; edits show in **Files Claude changed**, where **Undo** brings them back. Every other command shows an approval card first: installs, builds, tests, Git commands (a project's own Git settings can make them run programs) and commands joined with `|` too, and so does reading a file with keys or passwords. **Always allow** on the card lets that exact command through until Claude changes a file in this chat. Each command starts in the chat's own folder, and a reading command that climbs out with `..` asks. This is a safety net, not a wall: a program you allow can still change anything your account can. On **Never ask** there is no card.
+- **Protected places**: Desktop, Documents, Downloads, Pictures, Movies (Videos on Windows), Music, iCloud Drive or OneDrive, and your home folder stay read-only for commands, even when a chat's folder holds them. Make one of them a chat's folder on purpose and commands can change it in that chat. Settings, **Permissions** lists them, with a switch for each.
+- Undo and **Rewind to here** bring back files Claude edited, not files a command changed. Before you pick **Do it all**, **Never ask** or **Full access, safely**, Hearth checks for a backup (Time Machine on a Mac, File History or OneDrive on Windows). If there is none, it says so and offers to open the backup settings. You can always continue, and tick "Don't show this again".
 
 ## Features
 
@@ -297,11 +308,14 @@ The **Claude engine** (Claude Code) has its own part of that page. It never upda
 | Chat still asks on **Do it all** | That level still asks about risky things, such as files outside the chat's folder. The approval card says why. Allow it once, or choose always allow for that exact step. |
 | Claude is not signed in | Click **Sign in with Claude** again. **Open the browser again** replaces a stuck sign-in. |
 | Hearth acts oddly | Choose **Restart Hearth** in Hearth's menu. If the look looks broken, choose **Help, Relaunch with the plain look**. |
+| Hearth asks before quitting, or you want it to ask again | Settings, **Notifications and shortcuts**, **Ask before quitting while Claude is working**. Off means quits go straight through. |
 | You need to describe a problem | Choose **Help, Save Diagnostics**. It makes a small zip of version numbers and settings with secrets, emails and your user folder name removed. It has no chats. Look it over before you share it. |
 
 ## Closing Hearth
 
-Closing the window (the red button on a Mac, the X on Windows, or Cmd+W or Ctrl+W) quits Hearth completely, with nothing left in the Dock, the tray or the background. If Claude is still working, Hearth asks first: **Quit**, **Keep running in the background** (just this once), or **Cancel**.
+Closing the window (the red button on a Mac, the X on Windows, or Cmd+W or Ctrl+W) quits Hearth completely, with nothing left in the Dock, the tray or the background.
+
+Every way of quitting asks first when Claude is still working: the close button, Cmd+Q or Ctrl+Q, **Quit Hearth** in the menu, **Quit** in the tray icon's menu, and **Quit** in the Dock on a Mac. It says what is still going on, for example "Claude is still working in 2 chats.", and gives you **Quit now**, **Keep running in the background** (just this once; on a Mac, and on Windows when the tray icon is on) or **Cancel**. Cancel is the default. Tick **Don't ask again** and choose Quit now or Keep running to stop the question. Ticking it and then choosing Cancel changes nothing. To bring the question back, open **Settings, Notifications and shortcuts** and turn on **Ask before quitting while Claude is working**. Hearth never asks when it quits to install an update, when you choose Restart Hearth, or when your computer is shutting down or logging you out. While Hearth is locked, the question only shows counts, never anything from your chats.
 
 If you use schedules or leave work running, go to **Settings, Notifications and shortcuts** and under **When you close the window** choose **Keep Hearth running**. Closing the window then leaves Hearth running (on a Mac in the Dock and menu bar, on Windows in the tray), so schedules and background work carry on. To quit for real, use **Quit Hearth** in the menu (Cmd+Q on a Mac, Ctrl+Q on Windows) or right-click the tray icon and choose **Quit**. If you have schedules, Hearth tells you once after updating that closing now quits, and offers to switch.
 
@@ -312,4 +326,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.4.8 -->
+<!-- checked for: 0.5.0 -->
