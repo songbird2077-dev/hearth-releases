@@ -327,4 +327,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.5.3 -->
+<!-- checked for: 0.5.4 -->
