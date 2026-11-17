@@ -118,6 +118,7 @@ The other `.zip` files in the list are for Hearth's own updater. You do not need
    - which folders Claude may use,
    - how much Claude may do without asking (see [the five levels](#how-much-claude-does-on-its-own)),
    - which look you like. Plain is picked until you choose another.
+   If the Claude app has scheduled tasks, the welcome screen also offers **Bring over N scheduled tasks too**. It opens a checklist, and nothing is brought over unless you tick it. You can skip it and do it later in Settings, Schedules.
 3. **A short tour.** Each screen has a **Try it** button that opens the real thing. Press Esc to pause. Bring it back with **Help, Take the Tour**.
 4. **Start a chat.** Click **New chat** (Cmd+N on a Mac, Ctrl+N on Windows). It starts right away in **No specific files**: Claude uses a private Hearth folder and you can just ask.
 5. **To work with your own files,** use **New chat with options** (Cmd+Shift+N or Ctrl+Shift+N) and pick a folder, such as Documents. Do not pick your whole home folder. Claude works inside the folder you pick and asks before going outside it.
@@ -258,7 +259,7 @@ Settings, **Privacy and lock** can lock Hearth with Touch ID (Mac) or Windows He
 - Settings, **Backup and troubleshooting**, **Back up Hearth** makes one `.hearthbackup` file with your settings, groups, looks, mods and pages. Use **Restore from backup** on a new computer. Chats and passwords are not in it.
 
 ### Schedules
-Settings, **Schedules** sends a message for you at a set time, in a new or existing chat. **Start from a template** (for example Morning briefing or Weekly summary) fills the form. Nothing runs until you save. Schedules run only while Hearth is open. Closing the window quits Hearth unless you choose **Keep Hearth running** in Settings, Notifications and shortcuts, under **When you close the window** (see [Closing Hearth](#closing-hearth)). Schedules never skip permissions: if Claude needs your OK, the chat waits and Hearth notifies you.
+Settings, **Schedules** sends a message for you at a set time, in a new or existing chat. **Start from a template** (for example Morning briefing or Weekly summary) fills the form. Nothing runs until you save. Schedules run only while Hearth is open. Closing the window quits Hearth unless you choose **Keep Hearth running** in Settings, Notifications and shortcuts, under **When you close the window** (see [Closing Hearth](#closing-hearth)). Schedules never skip permissions: if Claude needs your OK, the chat waits and Hearth notifies you. **Bring over from the Claude app** (shown when Hearth finds scheduled tasks in the Claude desktop app, also in Cmd+K or Ctrl+K as **Bring over scheduled tasks from the Claude app**) opens a checklist of those tasks, from both the Code tab and Chat. Each shows when it runs, in plain words, and whether it is on in the Claude app. Tasks that are on, that Hearth can copy the time of, and that do not need Claude-app-only tools start ticked. Hearth only reads the Claude app's files. Every task you bring over starts turned off in Hearth: turn it on in Settings, Schedules after you turn it off in the Claude app (Code tab, Scheduled for Code tasks, Scheduled tasks in the Claude app for the rest), so it does not run twice. Where Hearth can not use a task's own folder (your whole home folder, the top of a drive, a network folder, or Hearth's own folder), it uses your New chat folder or Documents instead and names it on the last screen so you can check. A message longer than 8,000 characters can not be brought over. A task that runs on a pattern Hearth can not copy, or only once, starts at 9:00 AM every day until you pick a time. Tasks that use tools only the Claude app has will not work in Hearth.
 
 ### Usage
 The bottom bar shows how much of your plan you have used. Settings, **Usage and cost** shows what each folder has cost and has a **Usage saver** with three levels: Balanced, Strict and Off. Settings, Chats, **Summarize when a chat reaches** sets when long chats sum themselves up.
@@ -331,4 +332,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.5.6 -->
+<!-- checked for: 0.5.7 -->
