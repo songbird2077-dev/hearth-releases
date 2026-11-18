@@ -146,7 +146,7 @@ Tip: start with **Ask me first**. Claude then asks before it changes anything.
 
 Your messages and Claude's replies. Under each message are small icons. Point at one to see its name.
 
-To answer one part of a reply, select the text in it and press **Reply** (or right-click and choose **Reply with quote**, or press Cmd+Shift+L, Ctrl+Shift+L on Windows). The quote shows as a card above your message box, with an X to remove it (or press Esc in an empty box), and you type your answer below it. Replying again replaces the quote. In the chat, your message shows the quote as an indented card above your words. Click it to see all of it and jump to the reply it came from. **Reply to this** in a reply's **More** menu quotes its first lines.
+To copy part of a reply, select it and press **Copy** next to **Reply** (links come along when you paste into an app that keeps them), or right-click and choose **Copy**. Right-click a link to **Copy link**. To answer one part of a reply, select the text in it and press **Reply** (or right-click and choose **Reply with quote**, or press Cmd+Shift+L, Ctrl+Shift+L on Windows). The quote shows as a card above your message box, with an X to remove it (or press Esc in an empty box), and you type your answer below it. Replying again replaces the quote. In the chat, your message shows the quote as an indented card above your words. Click it to see all of it and jump to the reply it came from. **Reply to this** in a reply's **More** menu quotes its first lines.
 
 | Icon | What it does |
 |---|---|
@@ -349,4 +349,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.6.3 -->
+<!-- checked for: 0.6.4 -->
