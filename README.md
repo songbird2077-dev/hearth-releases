@@ -279,6 +279,14 @@ A scheduled task sends Claude a message for you, as often as you say, in a new c
 ### Usage
 The bottom bar shows how much of your plan you have used. Settings, **Usage and cost** shows what each folder has cost and has a **Usage saver** with three levels: Balanced, Strict and Off. Settings, Chats, **Summarize when a chat reaches** sets when long chats sum themselves up.
 
+The **Usage** page (the bar chart button at the bottom of the sidebar, **Usage** in the gear menu, **Open Usage** in Cmd+K or Ctrl+K, or the link at the bottom of the chat size details) shows how much Claude Code was used on this computer: in Hearth, in the Claude app and in the terminal.
+
+- Pick a time window: **Today**, **Last 5 hours**, **This week**, **This month**, **Last 30 days**, or **Pick dates** for any two days (both included). You see the estimated cost, tokens (sent, written, read from cache, saved to cache), turns, a bar chart by hour, day or month, and lists by model and by folder.
+- Every amount is an estimate at Anthropic's list prices. On a plan it is what the work would cost at API prices, not what you pay. Hearth chats use Claude Code's own estimate; use outside Hearth is worked out from Claude Code's chat files and Hearth's price list, and the page says how much came from each. Tokens from a model Hearth has no price for are counted but not priced.
+- **This month** shows used, the limit, what is left, when it starts again, and the pace ("At this pace: about $X by ..."). When your account reports a monthly limit for extra usage, that is shown, marked as from your account. Otherwise set your own **Monthly budget** (for example what your company allows) and the day it starts again. Hearth only shows it; nothing is stopped.
+- On a plan, the 5-hour and weekly limits show as the last chat reported them.
+- The first time, Hearth reads Claude Code's chat files in the background and shows **Still counting...** until it is done. After that it reads only what is new. Hearth never changes these files. It keeps the totals (numbers and folder names, no chat text) in its settings folder, so use stays counted after Claude Code deletes old chats.
+
 ### Codex helper
 Settings, **Codex helper** lets Claude hand work to OpenAI's Codex, under your own Codex sign-in. It is off until you turn it on, and Hearth asks you to confirm, because the task and the files Codex reads go to OpenAI. Modes: **Off**, **Only when I ask**, **Claude decides**, and **Save Claude usage**.
 It shows which account Codex is signed in to (the email and plan Codex reports, only in Hearth's window). **Switch account** signs Codex out and opens the sign-in page so you can pick another account; it won't run while a Codex run is going. **Use an API key instead** shows how.
@@ -349,4 +357,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.6.4 -->
+<!-- checked for: 0.6.5 -->
