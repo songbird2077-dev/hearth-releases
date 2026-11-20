@@ -120,7 +120,7 @@ The other `.zip` files in the list are for Hearth's own updater. You do not need
    - which look you like. Plain is picked until you choose another.
    If the Claude app has scheduled tasks, the welcome screen also offers **Bring over N scheduled tasks too**. It opens a checklist, and nothing is brought over unless you tick it. You can skip it and do it later in the sidebar, under Scheduled, or in Settings, Schedules.
 3. **A short tour.** Each screen has a **Try it** button that opens the real thing. Press Esc to pause. Bring it back with **Help, Take the Tour**.
-4. **Start a chat.** Click **New chat** (Cmd+N on a Mac, Ctrl+N on Windows). It starts right away in **No specific files**: Claude uses a private Hearth folder and you can just ask.
+4. **Start a chat.** Click **New chat** (Cmd+N on a Mac, Ctrl+N on Windows). A new chat opens right away in **No specific files**: Claude uses a private Hearth folder and you can just ask. It is a **draft** until you send your first message: nothing runs before that, and you can still change the folder, the Claude version and how much Claude does on its own.
 5. **To work with your own files,** use **New chat with options** (Cmd+Shift+N or Ctrl+Shift+N) and pick a folder, such as Documents. Do not pick your whole home folder. Claude works inside the folder you pick and asks before going outside it.
 6. Type your message and press **Enter** to send. **Shift+Enter** starts a new line.
 
@@ -141,6 +141,8 @@ Tip: start with **Ask me first**. Claude then asks before it changes anything.
 - **Linked chats** show under the chat that started them, in the same group, with a thin thread line. Pinning or moving one moves the whole family.
 - Drag the inner edge of the sidebar to make it wider or narrower. Double-click the edge to reset it.
 - Search the list, or press **Cmd+K** (Ctrl+K) to find chats, settings and actions in one box. It also finds words said inside chats.
+- **New chat drafts.** A new chat you have not sent anything in shows at the top of the list as one muted **New chat** row marked **Draft**. There is only ever one: **New chat** (the button, the menu or Cmd+N) takes you back to it, and **New chat with options** changes its options. It keeps what you typed, attached or quoted when you switch to another chat, and after Hearth restarts. Text that looks like a password or key, or a very long text, is kept only until Hearth closes. Signing out removes the draft. The chat starts when you send your first message. To throw it away, use the X on its row or **Discard** above its message box. A draft started with **Split off** stays linked to its chat.
+- Chats Hearth started that never got a message (empty **New chat** rows from older versions) are closed and taken off the list when Hearth starts and when you leave one. Only Hearth's own note about them goes; chats from the Claude app or Terminal are never touched, and no chat file is deleted. To see any of them again, use **Organize**, **Show hidden empty chats**.
 
 ### The chat
 
@@ -157,6 +159,8 @@ To copy part of a reply, select it and press **Copy** next to **Reply** (links c
 | More | **Reply to this** quotes the start of the reply above your message box. **Fork from here** starts a new chat with everything up to this point. **Split off** starts a linked chat. |
 
 Very long chats show the newest messages first and load older ones as you scroll up. Search still jumps to any message.
+
+When you send a message (or Hearth sends one for you, such as a scheduled task or continuing after a usage limit), the chat moves to the bottom and follows Claude's reply as it comes in. When Claude picks up work on its own (a linked chat's report, background work finishing), the view stays where you are. Scroll up to read something and it stops following; a **Jump to latest** button shows above the message box. Click it to go back to the bottom and follow again.
 
 ### The message box
 
@@ -378,4 +382,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.6.8 -->
+<!-- checked for: 0.6.9 -->
