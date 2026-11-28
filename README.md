@@ -243,7 +243,7 @@ Apps and add-ons, Files Claude changed, Background work, Preview, Notes, Helpers
 
 ### The bottom bar
 
-Shows how full the chat is ("Chat 42% full") once Claude has replied in this window (before that, an empty bar; point at it to see when the number comes) and, on a plan, how much of your 5-hour and weekly limits you have used. While Claude works it shows a rough time left; while an approval card or question waits on you, it says **Waiting for you** instead. Click the chat size to summarize older messages now.
+Shows how full the chat is ("Chat 42% full") once Claude has replied in this window (before that, an empty bar; point at it to see when the number comes) and, on a plan, your limits in short, for example "5-hour 40%", "Weekly 12%" or "Month $38 left". Click any of them to see every period: the 5-hour limit, the week (and a week per model when your plan has one) and the month, each with how much is used, how much is left and when it resets. A period your account has not reported says so. **Show at the bottom of chats**, in that panel and in Settings, Usage and cost, picks which ones you see: Chat size, 5-hour, Weekly, Monthly. A monthly amount from a budget you typed in is an estimate, so it reads "about". While Claude works it shows a rough time left; while an approval card or question waits on you, it says **Waiting for you** instead. Click the chat size to summarize older messages now.
 
 ## Permissions
 
@@ -363,7 +363,7 @@ The bottom bar shows how much of your plan you have used. Settings, **Usage and 
 
 The **Usage** page (the bar chart button at the bottom of the sidebar, **Open Usage** in Cmd+K or Ctrl+K, or the link at the bottom of the chat size details) shows how much Claude Code was used on this computer: in Hearth, in the Claude app and in the terminal.
 
-- **On a plan** it starts with your **Plan limits** in words, each with its bar, for example "5-hour limit: 40% used. Resets at 3:10 PM." and the same for the week. When no chat has reported them yet, Hearth asks Claude Code for them at once, without sending a message (no model runs and nothing is used from your plan); **Check now** asks again. If that does not work, the page says why, and sending a message in any chat loads them. Extra usage your account reports is real money and stays in view. Everything in dollars and tokens (the estimates, the monthly budget, the time windows, by model and by folder) is in a closed section, **Advanced: what this would cost on an API key**: your plan isn't billed per message, so it is only a comparison. With pay-as-you-go, dollars come first and everything is in view.
+- **On a plan** it starts with your **Plan limits** in words, each with its bar, one row per period (5-hour, weekly, monthly), for example "40% used · 60% left · resets at 3:10 PM", or for a monthly amount "$12.00 used · $38.00 left". A period that was not reported says so. When no chat has reported them yet, Hearth asks Claude Code for them at once, without sending a message (no model runs and nothing is used from your plan); **Check now** asks again. If that does not work, the page says why, and sending a message in any chat loads them. Extra usage your account reports is real money and stays in view. Everything in dollars and tokens (the estimates, the monthly budget, the time windows, by model and by folder) is in a closed section, **Advanced: what this would cost on an API key**: your plan isn't billed per message, so it is only a comparison. With pay-as-you-go, dollars come first and everything is in view.
 
 - Pick a time window: **Today**, **Last 5 hours**, **This week**, **This month**, **Last 30 days**, or **Pick dates** for any two days (both included). You see the estimated cost, tokens (sent, written, read from cache, saved to cache), turns, a bar chart by hour, day or month, and lists by model (by name, such as Opus 4.6) and by folder (by name; temporary folders the system makes are added together as **Temporary folders**).
 - Every amount is an estimate at Anthropic's list prices. On a plan it is what the work would cost at API prices, not what you pay. Hearth chats use Claude Code's own estimate; use outside Hearth is worked out from Claude Code's chat files and Hearth's price list, and the page says how much came from each. Tokens from a model Hearth has no price for are counted but not priced.
@@ -451,4 +451,4 @@ If you use schedules or leave work running, go to **Settings, Notifications and 
 
 Your chats stay, because they belong to Claude Code. To remove Hearth's own settings too, delete the `.hearth` folder in your user folder, and the settings folder named under [Your data](#your-data).
 
-<!-- checked for: 0.7.5 -->
+<!-- checked for: 0.7.6 -->
